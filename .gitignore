@@ -1,0 +1,11 @@
+# C++ binary files:
+*.exe
+*.out
+*.o
+*.obj
+
+# Ctags:
+tags
+
+# Vim buffers:
+*.swp
