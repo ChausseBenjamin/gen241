@@ -1,0 +1,66 @@
+\documentclass[a11paper, 11pt]{article}
+
+\usepackage{document}
+\usepackage{titlepage}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{frpseudocode}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% \addbibresource{bibliography.bib}
+% \nofiles
+
+% \institution{Université de Sherbrooke}
+% \faculty{Faculté de génie}
+% \department{Département de génie électrique et de génie informatique}
+\title{Titre du document}
+\classnb{GEN420}
+\class{Mathématiques des circuits logiques}
+\author{
+  \addtolength{\tabcolsep}{-0.4em}
+  \begin{tabular}{rcl} % Ajouter des auteurs au besoin
+  Benjamin Chausse & -- & chab1704 \\
+  Édouard Laurent  & -- & laue \\ % TODO: demander le numéro du CIP
+  \end{tabular}
+}
+% \teacher{Benjamin Chausse}
+% \location{Sherbrooke}
+% \date{\today}
+
+
+\begin{document}
+\maketitle
+\newpage
+% \tableofcontents
+% \newpage
+
+\section{Diagrammes UML}
+
+\section{Pseudo-code}
+
+Ceci est un test pour voir comment le package frpseudocode fonctionne.
+Du pseudo-code est pertinent pour l'APP ira ici.
+
+\begin{algorithm}
+\caption{Euclid's algorithm}\label{alg:euclid}
+\begin{algorithmic}[1]
+  \Function{Euclid}{$a, b$}
+    \While{$a \neq b$}
+      \If{$a > b$}
+        \State $a \gets a - b$
+      \Else
+        \State $b \gets b - a$
+      \EndIf
+    \EndWhile
+    \State \Return $a$
+  \EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+
+% \newpage
+% \printbibliography[heading=bibintoc]
+\end{document}
