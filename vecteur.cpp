@@ -24,38 +24,38 @@ int Vecteur::getTaille(){
 };
 
 void Vecteur::afficher(ostream &s){
-    for (int i = 0; i < taille; i++) {
-        formes[i]->afficher(s);
-    }
+  for (int i = 0; i < taille; i++) {
+    formes[i]->afficher(s);
+  }
 };
 
 bool Vecteur::ajouterForme(Forme *f) {
-    if (taille == capacite) {
-        // Double the size of the array
-        int newCapacite = capacite * 2;
-        Forme **newFormes = new (nothrow) Forme*[newCapacite];
-        if(newFormes==nullptr) return false;
-        for (int i = 0; i < taille; i++) {
-            newFormes[i] = formes[i];
-        }
-        capacite = newCapacite;
-        delete[] formes;
-        formes = newFormes;
+  if (taille == capacite) {
+    // Double the size of the array
+    int newCapacite = capacite * 2;
+    Forme **newFormes = new (nothrow) Forme*[newCapacite];
+    if(newFormes==nullptr) return false;
+    for (int i = 0; i < taille; i++) {
+      newFormes[i] = formes[i];
     }
-    formes[taille] = f;
-    taille++;
-    return true;
+    capacite = newCapacite;
+    delete[] formes;
+    formes = newFormes;
+  }
+  formes[taille] = f;
+  taille++;
+  return true;
 };
 
 Forme *Vecteur::supprimerForme(int index) {
-    Forme *f = formes[index];
-    while (index < taille) {
-        formes[index] = formes[index + 1];
-        index++;
-    }
-    formes[taille] = NULL;
-    taille--;
-    return f;
+  Forme *f = formes[index];
+  while (index < taille) {
+    formes[index] = formes[index + 1];
+    index++;
+  }
+  formes[taille] = NULL;
+  taille--;
+  return f;
 };
 
 void Vecteur::vider() {

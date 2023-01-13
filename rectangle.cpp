@@ -30,7 +30,7 @@ void Rectangle::setHauteur(int h){
   hauteur=h;
 };
 
-double Rectangle::getAire(){
+double Rectangle::aire(){
   return largeur*hauteur;
 };
 
@@ -39,6 +39,6 @@ void Rectangle::afficher(ostream &s){
     << ", y="          << getAncrageForme().y
     << ", l="          << getLargeur()
     << ", h="          << getHauteur()
-    << ", aire="       << getAire()
+    << ", aire="       << aire()
     << ")\n";
 };

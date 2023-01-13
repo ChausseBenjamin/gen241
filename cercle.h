@@ -1,3 +1,6 @@
+#ifndef __CERCLE_H__
+#define __CERCLE_H__
+
 #include "forme.h"
 
 class Cercle:Forme {
@@ -8,7 +11,9 @@ class Cercle:Forme {
     ~Cercle();
     void   setRayon(int r);
     int    getRayon();
-    double getAire();
+    double aire();
     double getPerimetre();
     void   afficher(ostream & s);
 };
+
+#endif

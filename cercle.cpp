@@ -18,7 +18,7 @@ int Cercle::getRayon() {
   return rayon;
 };
 
-double Cercle::getAire() {
+double Cercle::aire() {
   return M_PI*pow(rayon,2);
 };
 
@@ -30,5 +30,5 @@ void Cercle::afficher(ostream & s) {
   s << "Cercle (x=" << getAncrage().x
     << ", y="       << getAncrage().y
     << ", r="       << getRayon()
-    << ", aire="    << getAire() << ")\n";
+    << ", aire="    << aire() << ")\n";
 };

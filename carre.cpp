@@ -10,6 +10,6 @@ void Carre::afficher(ostream &s) {
     s << "Carre(x=" << getAncrage().x
       << ", y=" << getAncrage().y
       << ", c=" << getLargeur()
-      << ", a=" << getAire()
+      << ", a=" << aire()
       << ")\n";
 };

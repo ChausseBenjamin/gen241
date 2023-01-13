@@ -1,3 +1,6 @@
+#ifndef __RECTANGLE_H__
+#define __RECTANGLE_H__
+
 #include "forme.h"
 
 class Rectangle:public Forme{
@@ -12,6 +15,8 @@ class Rectangle:public Forme{
     Coordonnee getAncrageForme();
     void setLargeur(int l);
     void setHauteur(int h);
-    double getAire();
+    double aire();
     void afficher(ostream &s);
 };
+
+#endif

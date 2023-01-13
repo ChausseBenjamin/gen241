@@ -1,21 +1,10 @@
+#ifndef __VECTEUR_H__
+#define __VECTEUR_H__
+
 #include <iostream>
 #include "forme.h"
 
 using namespace std;
-
-// - [x] Items stockés sont des pointeurs de Forme
-// - [ ] Items toujours contigus en mémoire
-// - [ ] connaître la capacité maximale du vecteur
-// - [ ] connaître la taille courante du vecteur
-// - [ ] Lorsqu'il manque d'espace pour ajouter une forme,
-//       le vecteur double sa capacité
-// - [ ] vider le vecteur en un seul appel
-// - [ ] lorsque le vecteur est vidé, détruire ses formes
-// - [ ] savoir si le vecteur est vide (bool)
-// - [ ] ajouter une forme à la fin du vecteur (true si ok)
-// - [ ] supprimer une forme à un index (retourne la forme) NULL on error
-// - [ ] récupérer une forme à un index (retourne la forme) NULL on error
-// - [ ] afficher le vecteur en utilisant Forme::afficher()
 
 class Vecteur {
   private:
@@ -37,3 +26,4 @@ class Vecteur {
     void vider();
 };
 
+#endif

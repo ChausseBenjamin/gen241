@@ -7,8 +7,8 @@
  *    Ce fichier fait partie de la distribution de Graphicus.
 ********/
 
-#ifndef DESSIN_H
-#define DESSIN_H
+#ifndef __DESSIN_H__
+#define __DESSIN_H__
 
 #include <iostream>
 #include "forme.h"
