@@ -1,5 +1,5 @@
 /********
- * Fichier: graphicus-01.cpp
+ * Fichier: graphicus-02.cpp
  * Auteurs: C.-A. Brunet
  * Date: 08 janvier 2018 (creation)
  * Description: gestionnaire de tests pour l'application Graphicus. Ce

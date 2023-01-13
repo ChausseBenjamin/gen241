@@ -1,27 +1,34 @@
-#include <cmath>
-#include "forme.h"
+#include "cercle.h"
+#include <math.h>
 
-class Cercle:Forme {
-  private:
-    int Rayon;
-  public:
+Cercle::Cercle(int x, int y, int r):Forme(x,y) {
+  Coordonnee xy = {x,y};
+  setAncrage(xy);
+  setRayon(r);
+};
 
-    Cercle(int x, int y, int r):Forme(x,y),Rayon(r) {
-      Coordonnee t = {x,y};
-      setAncrage(t);
-      SetRayon(r);
+Cercle::~Cercle() {
+};
 
-    };
+void Cercle::setRayon(int r) {
+  rayon = r;
+};
 
-    void afficher(ostream & s);
-    int GetRayon(){return Rayon;};
-    void SetRayon(int r){Rayon=r;};
-    double aire(){return M_PI*Rayon*Rayon;};
-    double perimetre(){return 2*M_PI*Rayon;};
+int Cercle::getRayon() {
+  return rayon;
+};
+
+double Cercle::getAire() {
+  return M_PI*pow(rayon,2);
+};
+
+double Cercle::getPerimetre() {
+  return 2*M_PI*rayon;
 };
 
 void Cercle::afficher(ostream & s) {
   s << "Cercle (x=" << getAncrage().x
-    << ", y=" << getAncrage().y
-    << ", r=" << GetRayon() << ", aire=" << aire() << ")";
+    << ", y="       << getAncrage().y
+    << ", r="       << getRayon()
+    << ", aire="    << getAire() << ")\n";
 };
