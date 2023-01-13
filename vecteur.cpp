@@ -23,6 +23,10 @@ int Vecteur::getTaille(){
   return taille;
 };
 
+int Vecteur::getCapacite(){
+  return capacite;
+};
+
 void Vecteur::afficher(ostream &s){
   for (int i = 0; i < taille; i++) {
     formes[i]->afficher(s);

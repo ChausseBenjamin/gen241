@@ -12,6 +12,10 @@
 
 #include <iostream>
 #include "canevas.h"
+#include "forme.h"
+#include "rectangle.h"
+#include "carre.h"
+#include "cercle.h"
 
 using namespace std;
 

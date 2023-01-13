@@ -19,6 +19,7 @@ class Vecteur {
     bool estVide();
     Forme *getForme(int index);
     int getTaille();
+    int getCapacite();
     void afficher(ostream &s);
     // Manipulations
     bool ajouterForme(Forme *f);

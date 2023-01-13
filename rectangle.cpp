@@ -1,8 +1,6 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle(int x, int y, int w, int h){
-  Coordonnee xy = {x, y};
-  setAncrage(xy);
+Rectangle::Rectangle(int x, int y, int w, int h):Forme(x, y){
   setLargeur(w);
   setHauteur(h);
 };

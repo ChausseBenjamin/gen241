@@ -10,9 +10,9 @@
 
 Canevas::Canevas() {
  Couche couches[MAX_COUCHES];
- for (int i = 0; i < MAX_COUCHES; i++) {
-  couches[i] = Couche();
- };
+ /* for (int i = 0; i < MAX_COUCHES; i++) { */
+ /*  couches[i] = Couche(); */
+ /* }; */
  couches[0].changerEtat(STATE_ACTIVE);
 }
 
@@ -70,9 +70,7 @@ bool Canevas::retirerForme(int index) {
 double Canevas::aire() {
   double aire = 0;
   for (int i = 0; i < MAX_COUCHES; i++) {
-    if (couches[i].getEtat() == STATE_ACTIVE) {
       aire += couches[i].aire();
-    };
   };
   return aire;
 };
@@ -91,4 +89,11 @@ void Canevas::afficher(ostream & s) {
     s << "----- Couche " << i << "\n";
     couches[i].afficher(s);
   };
+};
+
+bool Canevas::reinitialiserCouche(int index) {
+  if (index < 0 || index >= MAX_COUCHES){
+    return false;
+  };
+  return couches[index].reinitialiser();
 };

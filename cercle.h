@@ -3,11 +3,11 @@
 
 #include "forme.h"
 
-class Cercle:Forme {
+class Cercle:public Forme {
   private:
     int rayon;
   public:
-    Cercle(int x, int y, int r);
+    Cercle(int x=0, int y=0, int r=1);
     ~Cercle();
     void   setRayon(int r);
     int    getRayon();

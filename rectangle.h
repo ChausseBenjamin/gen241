@@ -8,7 +8,7 @@ class Rectangle:public Forme{
     int largeur;
     int hauteur;
   public:
-    Rectangle(int x, int y, int l, int h);
+    Rectangle(int x=0, int y=0, int l=1, int h=1);
     ~Rectangle();
     int getLargeur();
     int getHauteur();

@@ -39,4 +39,11 @@ class Couche {
 
 };
 
+static const char* const STATES[] = {
+    "initialisee",
+    "actif",
+    "inactif"
+};
+
+
 #endif

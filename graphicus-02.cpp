@@ -10,9 +10,11 @@
 using namespace std;
 
 int main() {
-   Tests tests;
+  Tests tests;
 
-   tests.tests_application();
-   return 0;
+  /* tests.tests_unitaires(); */
+  tests.tests_application_cas_01();
+
+  return 0;
 }
 

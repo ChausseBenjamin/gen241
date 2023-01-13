@@ -2,8 +2,6 @@
 #include <math.h>
 
 Cercle::Cercle(int x, int y, int r):Forme(x,y) {
-  Coordonnee xy = {x,y};
-  setAncrage(xy);
   setRayon(r);
 };
 

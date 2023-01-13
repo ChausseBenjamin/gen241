@@ -10,7 +10,7 @@
 
 Couche::Couche() {
   state = STATE_INIT;
-  vecteur = Vecteur();
+  Vecteur vecteur;
 };
 
 Couche::~Couche() {
@@ -42,9 +42,11 @@ void Couche::afficher(ostream &s) {
 };
 
 bool Couche::changerEtat(int newState) {
-  if (state == STATE_INIT) return false;
-  state = newState;
-  return true;
+  if ( newState>=STATE_INIT && newState<=STATE_INACTIVE ) {
+    state = newState;
+    return true;
+  };
+  return false;
 };
 
 bool Couche::translater(int deltaX, int deltaY) {
@@ -55,17 +57,16 @@ bool Couche::translater(int deltaX, int deltaY) {
 };
 
 bool Couche::ajouterForme(Forme *f) {
-  int initialState = getEtat();
-  if (initialState == STATE_INACTIVE) return false;
-  bool success = vecteur.ajouterForme(f);
-  if (success) {
-    changerEtat(STATE_ACTIVE);
-  };
-  return success;
+  if (state != STATE_ACTIVE) return false;
+  return vecteur.ajouterForme(f);
 };
 
 Forme *Couche::supprimerForme(int index) {
-  if (state != STATE_ACTIVE) return NULL;
+  if (state != STATE_ACTIVE) {
+    return NULL;
+  } else {
+    return vecteur.supprimerForme(index);
+  };
   return vecteur.supprimerForme(index);
 };
 

@@ -5,7 +5,7 @@
 
 class Carre : public Rectangle {
 public:
-    Carre(int x, int y, int cote);
+    Carre(int x=0, int y=0, int cote=1);
     ~Carre();
     void afficher(ostream &s);
 };
