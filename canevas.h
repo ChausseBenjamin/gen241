@@ -7,8 +7,8 @@
  *    Ce fichier fait partie de la distribution de Graphicus.
 ********/
 
-#ifndef DESSIN_H
-#define DESSIN_H
+#ifndef __DESSIN_H__
+#define __DESSIN_H__
 
 #include <iostream>
 #include "forme.h"
@@ -34,6 +34,7 @@ public:
    double aire();
    bool translater(int deltaX, int deltaY);
    void afficher(ostream & s);
+   bool reinitialiserCouche(int index);
 
 private:
      Couche couches[MAX_COUCHES];

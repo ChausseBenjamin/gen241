@@ -8,11 +8,42 @@
  *    Ce fichier fait partie de la distribution de Graphicus.
 ********/
 
-#ifndef COUCHE_H
-#define COUCHE_H
+#ifndef __COUCHE_H__
+#define __COUCHE_H__
+
+#define STATE_INIT 0 // Couche initialisee mais vide
+#define STATE_ACTIVE 1 // Couche active (peut-etre modifiee)
+#define STATE_INACTIVE 2 // Couche inactive (non modifiable)
+
+#include "vecteur.h"
 
 class Couche {
-   // Classe a completer
+  private:
+    int state;
+    Vecteur vecteur;
+  public:
+    // Initialisation
+    Couche();
+    ~Couche();
+    // Informations
+    int    getEtat();
+    Forme  *getForme(int index);
+    double aire();
+    void   afficher(ostream &s);
+    // Modifications
+    bool   changerEtat(int newState);
+    bool   translater(int deltaX, int deltaY);
+    bool   ajouterForme(Forme *f);
+    Forme  *supprimerForme(int index);
+    bool   reinitialiser();
+
 };
+
+static const char* const STATES[] = {
+    "initialisee",
+    "actif",
+    "inactif"
+};
+
 
 #endif
