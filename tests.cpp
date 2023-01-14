@@ -255,17 +255,24 @@ void Tests::tests_application_cas_01() {
   cout << "\t* Aire du canevas: " << c.aire() << endl;
 
   cout << "Etape " << etape++
-       << ": Activer la couche 0" << endl;
+       << ": Activer la couche 0 et ajouter les formes suivantes" << endl;
   c.activerCouche(0);
-
-  cout << "Etape " << etape++
-       << ": Ajouter les trois formes géométriques suivantes" << endl;
   cout << "\t* Un rectangle (x=0, y=0, largeur=1, hauteur=1)" << endl;
   c.ajouterForme(new Rectangle());
   cout << "\t* Un carré (x=0, y=0, cote=1)" << endl;
   c.ajouterForme(new Carre());
   cout << "\t* Un cercle (x=0, y=0, rayon=1)" << endl;
   c.ajouterForme(new Cercle());
+
+  cout << "Etape " << etape++
+       << ": Translater les formes de la couche selon x=5, y=5 pour obtenir les formes suivantes lorsque affiché" << endl;
+  c.translater(5, 5);
+  cout << "\t* Un rectangle (x=5, y=5, largeur=1, hauteur=1)" << endl;
+  cout << "\t* Un carré (x=5, y=5, cote=1)" << endl;
+  cout << "\t* Un cercle (x=5, y=5, rayon=1)" << endl;
+  c.afficher(cout);
+
+
 
   cout << "Etape " << etape++
        << ": Couche 2 - initialisée" << endl;
