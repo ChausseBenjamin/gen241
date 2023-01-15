@@ -9,7 +9,7 @@
 
 #include "tests.h"
 
-// Tests sur les formes geometriques
+// Tests sur les formes geometriques {{{
 void Tests::tests_unitaires_formes() {
   cout << "----- Tests des formes geometriques -----\n";
 
@@ -49,9 +49,9 @@ void Tests::tests_unitaires_formes() {
   Cercle cc2;
   cc2.afficher(cout);
   cout << "\n";
-};
+}; // }}}
 
-// Tests sur la classe Vecteur
+// Tests sur la classe Vecteur {{{
 void Tests::tests_unitaires_vecteur() {
   cout << "----- Tests de la classe Vecteur -----\n\n";
 
@@ -114,9 +114,9 @@ void Tests::tests_unitaires_vecteur() {
        << "\nAffichage: {\n";
   v1.afficher(cout);
   cout << "}\n";
-};
+}; // }}}
 
-// Tests sur la classe Couche
+// Tests sur la classe Couche {{{
 void Tests::tests_unitaires_couche() {
   cout << "----- Tests de la classe Couche -----\n";
 
@@ -193,29 +193,29 @@ void Tests::tests_unitaires_couche() {
        << "\nAffichage: {\n";
   c1.afficher(cout);
   cout << "}\n\n";
+}; // }}}
 
-
-
-};
-
-// Tests sur la classe Canevas
+// Tests sur la classe Canevas {{{
 void Tests::tests_unitaires_canevas() {
-};
+}; // }}}
 
+// Execution de tout les tests unitaires {{{
 void Tests::tests_unitaires() {
   // Fait tous les tests unitaires
   tests_unitaires_formes();
   tests_unitaires_vecteur();
   tests_unitaires_couche();
   tests_unitaires_canevas();
-};
+}; // }}}
 
+// Execution de tout les tests de mise en application {{{
 void Tests::tests_application() {
   // Fait tous les tests applicatifs
   tests_application_cas_01();
   tests_application_cas_02();
-};
+}; // }}}
 
+// Premiere application {{{
 void Tests::tests_application_cas_01() {
   // Mise en place
   int etape = 1;
@@ -317,10 +317,10 @@ void Tests::tests_application_cas_01() {
   cout << "Etape " << etape++
        << ": Afficher l'aire du canevas" << endl;
   cout << "\t* Aire du canevas: " << c.aire() << endl;
+}; // }}}
 
-};
-
+// Deuxieme application {{{
 void Tests::tests_application_cas_02() {
   cout << "TESTS APPLICATION (CAS 02)" << endl;
   // Il faut ajouter les operations realisant ce scenario de test.
-};
+}; // }}}

@@ -10,9 +10,6 @@
 
 Canevas::Canevas() {
  Couche couches[MAX_COUCHES];
- /* for (int i = 0; i < MAX_COUCHES; i++) { */
- /*  couches[i] = Couche(); */
- /* }; */
  couches[0].changerEtat(STATE_ACTIVE);
 }
 
