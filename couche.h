@@ -19,18 +19,15 @@
 
 class Couche {
   private:
-    int state;
+    int     state;
     Vecteur vecteur;
   public:
-    // Initialisation
     Couche();
     ~Couche();
-    // Informations
     int    getEtat();
     Forme  *getForme(int index);
     double aire();
     void   afficher(ostream &s);
-    // Modifications
     bool   changerEtat(int newState);
     bool   translater(int deltaX, int deltaY);
     bool   ajouterForme(Forme *f);

@@ -1,0 +1,79 @@
+%% @author Oliver Irwin
+%% DATE
+\ProvidesPackage{frpseudocode}[DATE French Pseudocode VERSION]
+\RequirePackage{algpseudocode}
+
+%% Global mod
+\floatname{algorithm}{Algorithme}
+
+%% Functions %%
+\algrenewcommand\algorithmicprocedure{\textbf{PROCÉDURE}}
+\algrenewcommand\algorithmicfunction{\textbf{FONCTION}}
+\algrenewcommand\algorithmicreturn{Retourner}
+
+\algrenewtext{Procedure}[2]%
+{\algorithmicprocedure\ \textproc{#1}\ifthenelse{\equal{#2}{}}{}{(#2)}\ :}
+
+\algrenewtext{Function}[2]%
+{\algorithmicfunction\ \textproc{#1}\ifthenelse{\equal{#2}{}}{}{(#2)}\ :}
+
+%% Inputs
+\algrenewcommand\algorithmicrequire{\textbf{REQUIERT : }}
+\algrenewcommand\algorithmicensure{\textbf{VÉRIFIER : }}
+
+%% Control Instructions %%
+\algrenewcommand\algorithmicwhile{\textbf{TANT QUE}}
+\algnewcommand\algorithmicwhilem{\textbf{TANT QUE}}
+\algrenewcommand\algorithmicdo{\textbf{FAIRE}}
+\algnewcommand\algorithmicdom{\textbf{FAIRE}}
+\algrenewcommand\algorithmicend{\textbf{FIN}}
+\algrenewcommand\algorithmicfor{\textbf{POUR}}
+\algrenewcommand\algorithmicforall{\textbf{POUR TOUT}}
+\algnewcommand\algorithmicfrom{\textbf{DE }}
+\algnewcommand\algorithmicto{\textbf{À}}
+\algnewcommand\algorithmicform{\textbf{POUR}}
+
+\algrenewcommand\algorithmicrepeat{\textbf{RÉPÉTER}}
+\algrenewcommand\algorithmicuntil{\textbf{JUSQU'À}}
+
+\algdef{SE}[FORFT]{ForFT}{EndFor}[3]{}%
+
+%% Change commands
+\algrenewtext{ForFT}[3]%
+{\algorithmicfor\ #1 \algorithmicfrom  #2 \algorithmicto\ #3,\  \algorithmicdom\ :}
+
+\algrenewtext{For}[1]%
+{\algorithmicfor\ #1,\ \algorithmicdom\ :}
+
+\algrenewtext{EndFor}[0]%
+{\algorithmicend\ \algorithmicform}
+
+\algrenewtext{While}[1]%
+{\algorithmicwhile\ #1,\ \algorithmicdom\ :}
+
+\algrenewtext{EndWhile}[0]%
+{\algorithmicend\ \algorithmicwhilem}
+
+%% Conditionnals %%
+
+\algrenewcommand\algorithmicif{\textbf{SI}}
+\algnewcommand\algorithmicifm{\textbf{SI}}
+\algrenewcommand\algorithmicelse{\textbf{SINON}}
+\algrenewcommand\algorithmicthen{\textbf{ALORS}}
+\newcommand{\algorithmicelsif}{\algorithmicelse\ \algorithmicif}
+
+\algrenewtext{SINON SI}[1]%
+{\algorithmicelse ,\ \algorithmicifm\ #1}
+
+\algrenewtext{ENDIF}[0]%
+{\algorithmicend\ \algorithmicifm}
+
+
+\algtext*{EndWhile}% Remove "end while" text
+\algtext*{EndIf}% Remove "end if" text
+% \algtext*{EndFunction}% Remove "end if" text
+
+%% Logical
+%\algrenewcommand{\algorithmicnot}{\textbf{non}}
+%\algrenewcommand{\algorithmicand}{\textbf{et}}
+%\algrenewcommand{\algorithmicor}{\textbf{ou}}

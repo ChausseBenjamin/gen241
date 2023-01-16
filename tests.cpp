@@ -8,8 +8,10 @@
 ********/
 
 #include "tests.h"
+#include "math.h"
 
-// Tests sur les formes geometriques
+
+// Tests sur les formes geometriques {{{
 void Tests::tests_unitaires_formes() {
   cout << "----- Tests des formes geometriques -----\n";
 
@@ -49,9 +51,9 @@ void Tests::tests_unitaires_formes() {
   Cercle cc2;
   cc2.afficher(cout);
   cout << "\n";
-};
+}; // }}}
 
-// Tests sur la classe Vecteur
+// Tests sur la classe Vecteur {{{
 void Tests::tests_unitaires_vecteur() {
   cout << "----- Tests de la classe Vecteur -----\n\n";
 
@@ -114,9 +116,9 @@ void Tests::tests_unitaires_vecteur() {
        << "\nAffichage: {\n";
   v1.afficher(cout);
   cout << "}\n";
-};
+}; // }}}
 
-// Tests sur la classe Couche
+// Tests sur la classe Couche {{{
 void Tests::tests_unitaires_couche() {
   cout << "----- Tests de la classe Couche -----\n";
 
@@ -193,29 +195,97 @@ void Tests::tests_unitaires_couche() {
        << "\nAffichage: {\n";
   c1.afficher(cout);
   cout << "}\n\n";
+}; // }}}
 
-
-
-};
-
-// Tests sur la classe Canevas
+// Tests sur la classe Canevas {{{
 void Tests::tests_unitaires_canevas() {
-};
+  cout << "----- Tests de la classe Canevas -----\n\n";
 
+  cout << "--- Initialisation d'un canevas ---\n";
+  Canevas c1;
+  cout << "Couches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Ajout d'une forme (doit aller dans la couche 0) ---\n";
+  cout << "Couches: ";
+  c1.getEtats(cout);
+  cout << "Reussite: " << (c1.ajouterForme(new Carre())? "Oui":"Non")
+       << "\nAffichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Activation de la couche 3 ---\n";
+  cout << "Reussite: " << (c1.activerCouche(3)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Ajout de forme (doit aller dans la couche 3) ---\n";
+  cout << "Reussite: " << (c1.ajouterForme(new Carre())? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Reinitialisation de la couche active (3) ---\n";
+  cout << "Reussite: " << (c1.reinitialiserCouche(3)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Translation de couche initialisée (couche 3 par 1,2) ---\n";
+  cout << "Reussite: " << (c1.translater(1, 2)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Translation d'une couche active (couche 0 par 1,2) ---\n";
+  c1.activerCouche(0);
+  cout << "Reussite: " << (c1.translater(1, 2)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Réinitialisation du canevas ---\n";
+  cout << "Reussite: " << (c1.reinitialiser()? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n";
+
+
+}; // }}}
+
+// Execution de tout les tests unitaires {{{
 void Tests::tests_unitaires() {
   // Fait tous les tests unitaires
   tests_unitaires_formes();
   tests_unitaires_vecteur();
   tests_unitaires_couche();
   tests_unitaires_canevas();
-};
+}; // }}}
 
+// Execution de tout les tests de mise en application {{{
 void Tests::tests_application() {
   // Fait tous les tests applicatifs
   tests_application_cas_01();
   tests_application_cas_02();
-};
+}; // }}}
 
+// Premiere application {{{
 void Tests::tests_application_cas_01() {
   // Mise en place
   int etape = 1;
@@ -317,10 +387,84 @@ void Tests::tests_application_cas_01() {
   cout << "Etape " << etape++
        << ": Afficher l'aire du canevas" << endl;
   cout << "\t* Aire du canevas: " << c.aire() << endl;
+}; // }}}
 
-};
+// takes an int pointer and increments it, prints the message: "Step i: msg\n"
+void step(string msg, int *i) {
+    cout << "Étape " << *i << ": " << msg << endl;
+    (*i)++;
+}
 
+// Deuxieme application {{{
 void Tests::tests_application_cas_02() {
   cout << "TESTS APPLICATION (CAS 02)" << endl;
-  // Il faut ajouter les operations realisant ce scenario de test.
-};
+  // Mise en place
+  Canevas c;
+  int etape = 1;
+
+
+  step("Activer la couche d'index 4", &etape);
+  c.activerCouche(4);
+
+  step("Ajouter les formes suivantes au canevas:", &etape);
+  cout << "\t- Un cercle    (x= 1, y= 2, rayon=1/sqrt(pi) )\n"
+       << "\t- Un rectangle (x= 3, y= 4, largeur=3, hauteur=4)\n"
+       << "\t- Un carré     (x=-1, y=-1, cote=2)\n";
+  c.ajouterForme(new Cercle(1, 2, 1/sqrt(M_PI)));
+  c.ajouterForme(new Rectangle(3, 4, 3, 4));
+  c.ajouterForme(new Carre(-1, -1, 2));
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Imprimer l'aire du canevas (doit etre egale a 1+12+4 soit 17)", &etape);
+  cout << "\t* Aire du canevas: " << c.aire() << endl;
+
+  step("Activer la couche d'index 3", &etape);
+  c.activerCouche(3);
+
+  step("Ajouter les formes par défaut au canevas. Soit:", &etape);
+  cout << "\t- Un cercle    (x=0, y=0, rayon=1)\n"
+       << "\t- Un rectangle (x=0, y=0, largeur=1, hauteur=1)\n"
+       << "\t- Un carre     (x=0, y=0, cote=1)\n";
+  c.ajouterForme(new Cercle());
+  c.ajouterForme(new Rectangle());
+  c.ajouterForme(new Carre());
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Translater la couche active de (1,1)", &etape);
+  c.translater(1, 1);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Supprimer la forme d'index 0 (la premiere)", &etape);
+  c.retirerForme(0);
+
+  step("Activer la couche d'index 4", &etape);
+  c.activerCouche(4);
+
+  step("Supprimer la forme d'index 2 (la dernière)", &etape);
+  c.retirerForme(2);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Initialiser la couche d'index 4", &etape);
+  c.reinitialiserCouche(4);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Imprimer l'aire du canevas", &etape);
+  cout << "\t* Aire du canevas: " << c.aire() << endl;
+
+  step("Réinitialiser le canevas", &etape);
+  c.reinitialiser();
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+}; // }}}

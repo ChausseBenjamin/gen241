@@ -10,13 +10,13 @@ class Rectangle:public Forme{
   public:
     Rectangle(int x=0, int y=0, int l=1, int h=1);
     ~Rectangle();
-    int getLargeur();
-    int getHauteur();
+    int        getLargeur();
+    int        getHauteur();
     Coordonnee getAncrageForme();
-    void setLargeur(int l);
-    void setHauteur(int h);
-    double aire();
-    void afficher(ostream &s);
+    void       setLargeur(int l);
+    void       setHauteur(int h);
+    double     aire();
+    void       afficher(ostream &s);
 };
 
 #endif

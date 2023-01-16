@@ -1,8 +1,9 @@
-# C++ binary files:
+# C++ files:
 *.exe
 *.out
 *.o
 *.obj
+*.a
 graphicus-*
 
 # Ctags:
@@ -10,3 +11,26 @@ tags
 
 # Vim buffers:
 *.swp
+
+# LaTeX Files
+*.4tc
+*.xref
+*.tmp
+*.pyc
+*.pyo
+*.fls
+*.vrb
+*.fdb_latexmk
+*.bak
+*.swp
+*.aux
+*.log
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex
+_minted-*
+*.lof
+*.lot
+*.toc

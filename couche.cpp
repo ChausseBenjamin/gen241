@@ -71,7 +71,6 @@ Forme *Couche::supprimerForme(int index) {
 };
 
 bool Couche::reinitialiser() {
-  if (state == STATE_INIT) return false;
   state = STATE_INIT;
   vecteur.vider();
   return true;

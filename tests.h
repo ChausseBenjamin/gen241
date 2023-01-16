@@ -27,7 +27,6 @@ public:
    void tests_unitaires_couche();
    void tests_unitaires_canevas();
    void tests_unitaires(); // Appel de tous les tests unitaires
-
    // Methodes pour les tests unitaires des classes
    void tests_application_cas_01();
    void tests_application_cas_02();

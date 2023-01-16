@@ -34,6 +34,7 @@ void Vecteur::afficher(ostream &s){
 };
 
 bool Vecteur::ajouterForme(Forme *f) {
+  if (f == NULL) return false;
   if (taille == capacite) {
     // Double the size of the array
     int newCapacite = capacite * 2;
