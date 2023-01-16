@@ -1,0 +1,95 @@
+TESTS APPLICATION (CAS 02)
+Étape 1: Activer la couche d'index 4
+Étape 2: Ajouter les formes suivantes au canevas:
+	- Un cercle    (x= 1, y= 2, rayon=1/sqrt(pi) )
+	- Un rectangle (x= 3, y= 4, largeur=3, hauteur=4)
+	- Un carré     (x=-1, y=-1, cote=2)
+Étape 3: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Cercle (x=1, y=2, r=0, aire=0)
+Rectangle:(x=3, y=4, l=3, h=4, aire=12)
+Carre(x=-1, y=-1, c=2, a=4)
+Étape 4: Imprimer l'aire du canevas (doit etre egale a 1+12+4 soit 17)
+	* Aire du canevas: 16
+Étape 5: Activer la couche d'index 3
+Étape 6: Ajouter les formes par défaut au canevas. Soit:
+	- Un cercle    (x=0, y=0, rayon=1)
+	- Un rectangle (x=0, y=0, largeur=1, hauteur=1)
+	- Un carre     (x=0, y=0, cote=1)
+Étape 7: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Cercle (x=0, y=0, r=1, aire=3.14159)
+Rectangle:(x=0, y=0, l=1, h=1, aire=1)
+Carre(x=0, y=0, c=1, a=1)
+----- Couche 4
+Cercle (x=1, y=2, r=0, aire=0)
+Rectangle:(x=3, y=4, l=3, h=4, aire=12)
+Carre(x=-1, y=-1, c=2, a=4)
+Étape 8: Translater la couche active de (1,1)
+Étape 9: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Cercle (x=1, y=1, r=1, aire=3.14159)
+Rectangle:(x=1, y=1, l=1, h=1, aire=1)
+Carre(x=1, y=1, c=1, a=1)
+----- Couche 4
+Cercle (x=1, y=2, r=0, aire=0)
+Rectangle:(x=3, y=4, l=3, h=4, aire=12)
+Carre(x=-1, y=-1, c=2, a=4)
+Étape 10: Supprimer la forme d'index 0 (la premiere)
+Étape 11: Activer la couche d'index 4
+Étape 12: Supprimer la forme d'index 2 (la dernière)
+Étape 13: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Rectangle:(x=1, y=1, l=1, h=1, aire=1)
+Carre(x=1, y=1, c=1, a=1)
+----- Couche 4
+Cercle (x=1, y=2, r=0, aire=0)
+Rectangle:(x=3, y=4, l=3, h=4, aire=12)
+Étape 14: Initialiser la couche d'index 4
+Étape 15: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Rectangle:(x=1, y=1, l=1, h=1, aire=1)
+Carre(x=1, y=1, c=1, a=1)
+----- Couche 4
+Couche initialisée
+Étape 16: Imprimer l'aire du canevas
+	* Aire du canevas: 2
+Étape 17: Réinitialiser le canevas
+Étape 18: Afficher le canevas
+----- Couche 0
+Couche initialisée
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée

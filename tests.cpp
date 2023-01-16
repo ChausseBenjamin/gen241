@@ -8,6 +8,8 @@
 ********/
 
 #include "tests.h"
+#include "math.h"
+
 
 // Tests sur les formes geometriques {{{
 void Tests::tests_unitaires_formes() {
@@ -387,8 +389,82 @@ void Tests::tests_application_cas_01() {
   cout << "\t* Aire du canevas: " << c.aire() << endl;
 }; // }}}
 
+// takes an int pointer and increments it, prints the message: "Step i: msg\n"
+void step(string msg, int *i) {
+    cout << "Étape " << *i << ": " << msg << endl;
+    (*i)++;
+}
+
 // Deuxieme application {{{
 void Tests::tests_application_cas_02() {
   cout << "TESTS APPLICATION (CAS 02)" << endl;
-  // Il faut ajouter les operations realisant ce scenario de test.
+  // Mise en place
+  Canevas c;
+  int etape = 1;
+
+
+  step("Activer la couche d'index 4", &etape);
+  c.activerCouche(4);
+
+  step("Ajouter les formes suivantes au canevas:", &etape);
+  cout << "\t- Un cercle    (x= 1, y= 2, rayon=1/sqrt(pi) )\n"
+       << "\t- Un rectangle (x= 3, y= 4, largeur=3, hauteur=4)\n"
+       << "\t- Un carré     (x=-1, y=-1, cote=2)\n";
+  c.ajouterForme(new Cercle(1, 2, 1/sqrt(M_PI)));
+  c.ajouterForme(new Rectangle(3, 4, 3, 4));
+  c.ajouterForme(new Carre(-1, -1, 2));
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Imprimer l'aire du canevas (doit etre egale a 1+12+4 soit 17)", &etape);
+  cout << "\t* Aire du canevas: " << c.aire() << endl;
+
+  step("Activer la couche d'index 3", &etape);
+  c.activerCouche(3);
+
+  step("Ajouter les formes par défaut au canevas. Soit:", &etape);
+  cout << "\t- Un cercle    (x=0, y=0, rayon=1)\n"
+       << "\t- Un rectangle (x=0, y=0, largeur=1, hauteur=1)\n"
+       << "\t- Un carre     (x=0, y=0, cote=1)\n";
+  c.ajouterForme(new Cercle());
+  c.ajouterForme(new Rectangle());
+  c.ajouterForme(new Carre());
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Translater la couche active de (1,1)", &etape);
+  c.translater(1, 1);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Supprimer la forme d'index 0 (la premiere)", &etape);
+  c.retirerForme(0);
+
+  step("Activer la couche d'index 4", &etape);
+  c.activerCouche(4);
+
+  step("Supprimer la forme d'index 2 (la dernière)", &etape);
+  c.retirerForme(2);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Initialiser la couche d'index 4", &etape);
+  c.reinitialiserCouche(4);
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
+  step("Imprimer l'aire du canevas", &etape);
+  cout << "\t* Aire du canevas: " << c.aire() << endl;
+
+  step("Réinitialiser le canevas", &etape);
+  c.reinitialiser();
+
+  step("Afficher le canevas", &etape);
+  c.afficher(cout);
+
 }; // }}}

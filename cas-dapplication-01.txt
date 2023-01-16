@@ -1,0 +1,95 @@
+TESTS APPLICATION (CAS 01)
+Etape 1: Activation de la couche 1
+Etape 2: Ajout des trois formes géométriques suivantes
+	* Un rectangle (x=0, y=0, largeur=2, hauteur=3)
+	* Un carré (x=2, y=3, cote=4)
+	* Un cercle (x=7, y=8, rayon=6)
+Etape 3: Activer la couche 2
+Etape 4: Ajouter la forme géométrique suivante
+	* Un rectangle (x=0, y=0, largeur=4, hauteur=5)
+Etape 5: Afficher le canevas
+----- Couche 0
+----- Couche 1
+Rectangle:(x=0, y=0, l=2, h=3, aire=6)
+Carre(x=2, y=3, c=4, a=16)
+Cercle (x=7, y=8, r=6, aire=113.097)
+----- Couche 2
+Rectangle:(x=0, y=0, l=4, h=5, aire=20)
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée
+Etape 6: Afficher l'aire du canevas
+	* Aire du canevas: 155.097
+Etape 7: Activer la couche 0 et ajouter les formes suivantes
+	* Un rectangle (x=0, y=0, largeur=1, hauteur=1)
+	* Un carré (x=0, y=0, cote=1)
+	* Un cercle (x=0, y=0, rayon=1)
+Etape 8: Translater les formes de la couche selon x=5, y=5 pour obtenir les formes suivantes lorsque affiché
+	* Un rectangle (x=5, y=5, largeur=1, hauteur=1)
+	* Un carré (x=5, y=5, cote=1)
+	* Un cercle (x=5, y=5, rayon=1)
+----- Couche 0
+Rectangle:(x=5, y=5, l=1, h=1, aire=1)
+Carre(x=5, y=5, c=1, a=1)
+Cercle (x=5, y=5, r=1, aire=3.14159)
+----- Couche 1
+Rectangle:(x=0, y=0, l=2, h=3, aire=6)
+Carre(x=2, y=3, c=4, a=16)
+Cercle (x=7, y=8, r=6, aire=113.097)
+----- Couche 2
+Rectangle:(x=0, y=0, l=4, h=5, aire=20)
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée
+Etape 9: Couche 2 - initialisée
+Etape 10: Couche 3 - initialisée
+Etape 11: Couche 4 - initialisée
+Etape 12: Afficher le canevas
+----- Couche 0
+Rectangle:(x=5, y=5, l=1, h=1, aire=1)
+Carre(x=5, y=5, c=1, a=1)
+Cercle (x=5, y=5, r=1, aire=3.14159)
+----- Couche 1
+Rectangle:(x=0, y=0, l=2, h=3, aire=6)
+Carre(x=2, y=3, c=4, a=16)
+Cercle (x=7, y=8, r=6, aire=113.097)
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée
+Etape 13: Afficher l'aire du canevas
+Etape 14: Retirer la première forme de la couche 1
+Etape 15: Afficher le canevas
+----- Couche 0
+Rectangle:(x=5, y=5, l=1, h=1, aire=1)
+Carre(x=5, y=5, c=1, a=1)
+Cercle (x=5, y=5, r=1, aire=3.14159)
+----- Couche 1
+Carre(x=2, y=3, c=4, a=16)
+Cercle (x=7, y=8, r=6, aire=113.097)
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée
+Etape 16: Afficher l'aire du canevas
+	* Aire du canevas: 134.239
+Etape 17: Réinitialiser le canevas
+Etape 18: Afficher le canevas
+----- Couche 0
+Couche initialisée
+----- Couche 1
+Couche initialisée
+----- Couche 2
+Couche initialisée
+----- Couche 3
+Couche initialisée
+----- Couche 4
+Couche initialisée
+Etape 19: Afficher l'aire du canevas
+	* Aire du canevas: 0
