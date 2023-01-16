@@ -9,7 +9,7 @@
 %% Functions %%
 \algrenewcommand\algorithmicprocedure{\textbf{PROCÉDURE}}
 \algrenewcommand\algorithmicfunction{\textbf{FONCTION}}
-\algrenewcommand\algorithmicreturn{\textbf{RENVOYER}}
+\algrenewcommand\algorithmicreturn{Retourner}
 
 \algrenewtext{Procedure}[2]%
 {\algorithmicprocedure\ \textproc{#1}\ifthenelse{\equal{#2}{}}{}{(#2)}\ :}
@@ -67,6 +67,11 @@
 
 \algrenewtext{ENDIF}[0]%
 {\algorithmicend\ \algorithmicifm}
+
+
+\algtext*{EndWhile}% Remove "end while" text
+\algtext*{EndIf}% Remove "end if" text
+% \algtext*{EndFunction}% Remove "end if" text
 
 %% Logical
 %\algrenewcommand{\algorithmicnot}{\textbf{non}}

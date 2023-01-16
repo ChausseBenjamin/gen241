@@ -31,3 +31,6 @@ tags
 *.run.xml
 *.synctex
 _minted-*
+*.lof
+*.lot
+*.toc

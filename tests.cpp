@@ -197,6 +197,74 @@ void Tests::tests_unitaires_couche() {
 
 // Tests sur la classe Canevas {{{
 void Tests::tests_unitaires_canevas() {
+  cout << "----- Tests de la classe Canevas -----\n\n";
+
+  cout << "--- Initialisation d'un canevas ---\n";
+  Canevas c1;
+  cout << "Couches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Ajout d'une forme (doit aller dans la couche 0) ---\n";
+  cout << "Couches: ";
+  c1.getEtats(cout);
+  cout << "Reussite: " << (c1.ajouterForme(new Carre())? "Oui":"Non")
+       << "\nAffichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Activation de la couche 3 ---\n";
+  cout << "Reussite: " << (c1.activerCouche(3)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Ajout de forme (doit aller dans la couche 3) ---\n";
+  cout << "Reussite: " << (c1.ajouterForme(new Carre())? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Reinitialisation de la couche active (3) ---\n";
+  cout << "Reussite: " << (c1.reinitialiserCouche(3)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Translation de couche initialisée (couche 3 par 1,2) ---\n";
+  cout << "Reussite: " << (c1.translater(1, 2)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Translation d'une couche active (couche 0 par 1,2) ---\n";
+  c1.activerCouche(0);
+  cout << "Reussite: " << (c1.translater(1, 2)? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n\n";
+
+  cout << "--- Réinitialisation du canevas ---\n";
+  cout << "Reussite: " << (c1.reinitialiser()? "Oui":"Non")
+       << "\nCouches: ";
+  c1.getEtats(cout);
+  cout << "Affichage: {\n";
+  c1.afficher(cout);
+  cout << "}\n";
+
+
 }; // }}}
 
 // Execution de tout les tests unitaires {{{
